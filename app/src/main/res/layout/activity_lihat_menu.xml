@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MenuPesanActivity">
+    android:background="#00673AB7"
+    tools:context=".activities.LihatMenuActivity">
 
     <Button
         android:id="@+id/btn_makanan_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
         android:onClick="handlerClickMakananFragment"
         android:text="Makanaan"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,25 +23,13 @@
         android:id="@+id/btn_minuman_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
         android:onClick="handlerClickMinumanFragment"
         android:text="Minumant"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <FrameLayout
-        android:id="@+id/dynamic_fragment_placeholder"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginBottom="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_makanan_fragment"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -49,11 +40,11 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="56dp"
-        android:layout_height="30dp"
+        android:layout_width="93dp"
+        android:layout_height="59dp"
+        android:onClick="handlerClickMenuAwalFragment"
         android:src="?attr/homeAsUpIndicator"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dynamic_fragment_placeholder" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
