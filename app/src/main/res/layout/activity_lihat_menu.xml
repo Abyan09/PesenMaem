@@ -11,11 +11,11 @@
         android:id="@+id/btn_makanan_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="200dp"
         android:onClick="handlerClickMakananFragment"
         android:text="Makanaan"
-        app:layout_constraintEnd_toStartOf="@id/guideline2"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,28 +23,24 @@
         android:id="@+id/btn_minuman_fragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
         android:onClick="handlerClickMinumanFragment"
         android:text="Minumant"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_makanan_fragment"
+        app:layout_constraintVertical_bias="0.304" />
 
     <ImageButton
         android:id="@+id/imageButton"
         android:layout_width="93dp"
         android:layout_height="59dp"
+        android:layout_marginTop="139dp"
         android:onClick="handlerClickMenuAwalFragment"
         android:src="?attr/homeAsUpIndicator"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_minuman_fragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
