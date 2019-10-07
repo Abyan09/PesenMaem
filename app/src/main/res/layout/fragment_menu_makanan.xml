@@ -29,7 +29,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="484dp" />
+        app:layout_constraintGuide_end="454dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline4"
@@ -42,22 +42,22 @@
         android:id="@+id/imageView2"
         android:layout_width="131dp"
         android:layout_height="134dp"
+        android:src="@drawable/pecelmadiun"
         app:layout_constraintBottom_toTopOf="@+id/guideline5"
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintHorizontal_bias="0.592"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3"
-        app:layout_constraintVertical_bias="0.055"
-        android:src="@drawable/pecelmadiun" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textNama2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
         android:layout_marginTop="12dp"
-        android:text="Nama Makanan: Pecel Madiun"
+        android:text="Nama Makanan:           Pecel Madiun"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="363dp" />
+        app:layout_constraintGuide_end="323dp" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -93,12 +93,12 @@
 
     <TextView
         android:id="@+id/txtNama3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Nama Makanan: Ayam Geprek"
+        android:layout_width="117dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:text="Nama Makanan:        Ayam Geprek"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.092"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline5" />
 
@@ -120,7 +120,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="214dp" />
+        app:layout_constraintGuide_end="185dp" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -130,16 +130,16 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline6"
-        tools:src="@drawable/nasigoreng" />
+        android:src="@drawable/nasigoreng" />
 
     <TextView
         android:id="@+id/txtNama4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Nama Makanan: Nasi Goreng"
+        android:layout_width="131dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:text="Nama Makanan:          Nasi Goreng"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.097"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="@+id/guideline4"
         app:layout_constraintTop_toTopOf="@+id/guideline6" />
 
@@ -161,6 +161,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="64dp" />
+        app:layout_constraintGuide_end="72dp" />
+
+    <FrameLayout
+        android:layout_width="317dp"
+        android:layout_height="520dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

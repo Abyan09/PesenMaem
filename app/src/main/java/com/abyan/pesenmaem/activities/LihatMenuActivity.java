@@ -21,17 +21,15 @@ public class LihatMenuActivity extends AppCompatActivity {
 
     public void handlerClickMakananFragment(View view) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
         MenuMakananFragment makananFragment = (MenuMakananFragment) getSupportFragmentManager().findFragmentByTag("MAKANAAN_FRAGMENT");
         if (makananFragment != null && makananFragment.isVisible()) {
             fragmentTransaction.commit();
         } else {
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.showmenu,new MenuMakananFragment(), "MENU_MAKANAN_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
-        Intent intent = new Intent(this, MenuMakananFragment.class);
-        startActivity(intent);
     }
 
     public void handlerClickMinumanFragment(View view) {
@@ -42,11 +40,10 @@ public class LihatMenuActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         } else {
             fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right);
+            fragmentTransaction.replace(R.id.showmenu,new MenuMinumanFragment(), "MENU_MINUMAN_FRAGMENT");
             fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
         }
-        Intent intent = new Intent(this, MenuMinumanFragment.class);
-        startActivity(intent);
     }
 
     public void handlerClickMenuAwalFragment(View view) {

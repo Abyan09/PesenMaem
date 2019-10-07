@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.abyan.pesenmaem.MainActivity;
 import com.abyan.pesenmaem.R;
 
 public class MenuAwalActivity extends AppCompatActivity {
@@ -18,6 +19,11 @@ public class MenuAwalActivity extends AppCompatActivity {
 
     public void handlerClickMenuFragment(View view) {
         Intent intent = new Intent(this, LihatMenuActivity.class);
+        startActivity(intent);
+    }
+
+    public void handlerClickHomeFragment(View view) {
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
