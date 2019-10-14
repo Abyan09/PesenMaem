@@ -1,52 +1,67 @@
 package com.abyan.pesenmaem.activities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 
 import com.abyan.pesenmaem.R;
 import com.abyan.pesenmaem.fragments.MenuMakananFragment;
 import com.abyan.pesenmaem.fragments.MenuMinumanFragment;
 
-public class LihatMenuActivity extends AppCompatActivity {
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.time.Instant;
+
+public class LihatMenuActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat_menu);
+        loadFragment(new MenuMakananFragment());
+        BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
+        // beri listener pada saat item/menu bottomnavigation terpilih
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
     }
 
-    public void handlerClickMakananFragment(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        MenuMakananFragment makananFragment = (MenuMakananFragment) getSupportFragmentManager().findFragmentByTag("MAKANAAN_FRAGMENT");
-        if (makananFragment != null && makananFragment.isVisible()) {
-            fragmentTransaction.commit();
-        } else {
-            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right);
-            fragmentTransaction.replace(R.id.showmenu,new MenuMakananFragment(), "MENU_MAKANAN_FRAGMENT");
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+    private boolean loadFragment(Fragment fragment) {
+        if (fragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, fragment)
+                    .addToBackStack(null)
+                    .commit();
+            return true;
         }
+        return false;
     }
 
-    public void handlerClickMinumanFragment(View view) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-
-        MenuMinumanFragment minumanFragment = (MenuMinumanFragment) getSupportFragmentManager().findFragmentByTag("MINUMAN_FRAGMENT");
-        if (minumanFragment != null && minumanFragment.isVisible()) {
-            fragmentTransaction.commit();
-        } else {
-            fragmentTransaction.setCustomAnimations(R.anim.enter_from_left, R.anim.exit_from_left, R.anim.enter_from_left, R.anim.exit_from_right);
-            fragmentTransaction.replace(R.id.showmenu,new MenuMinumanFragment(), "MENU_MINUMAN_FRAGMENT");
-            fragmentTransaction.addToBackStack(null);
-            fragmentTransaction.commit();
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        Fragment fragment = null;
+        switch (menuItem.getItemId()) {
+            case R.id.action_food:
+                fragment = new MenuMakananFragment();
+                break;
+            case R.id.action_drink:
+                fragment = new MenuMinumanFragment();
+                break;
         }
+        return loadFragment(fragment);
     }
 
-    public void handlerClickMenuAwalFragment(View view) {
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
         Intent intent = new Intent(this, MenuAwalActivity.class);
         startActivity(intent);
     }

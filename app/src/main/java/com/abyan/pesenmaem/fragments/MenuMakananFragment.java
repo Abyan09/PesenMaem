@@ -10,12 +10,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abyan.pesenmaem.R;
+import com.abyan.pesenmaem.activities.LihatMenuActivity;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class MenuMakananFragment extends Fragment {
-
 
     public MenuMakananFragment() {
         // Required empty public constructor
